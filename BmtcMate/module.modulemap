@@ -1,0 +1,14 @@
+//
+//  module.modulemap
+//  BmtcMate
+//
+//  Created by Vasu Deshpande on 11/06/23.
+//
+
+module BmtcLib {
+    header "BmtcLib.hpp"
+    
+    requires cplusplus
+    
+    export *
+}

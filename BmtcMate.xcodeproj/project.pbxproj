@@ -22,6 +22,8 @@
 		9187CBE72A34DCE200ACB95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9187CBE62A34DCE200ACB95F /* Assets.xcassets */; };
 		9187CBEB2A34DCE200ACB95F /* BmtcMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */; };
+		9187CC082A3512A700ACB95F /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC062A3512A700ACB95F /* lib */; };
+		9187CC092A3512A700ACB95F /* include in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC072A3512A700ACB95F /* include */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,11 @@
 		9187CBE62A34DCE200ACB95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9187CBE82A34DCE200ACB95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusStop.swift; sourceTree = "<group>"; };
+		9187CC062A3512A700ACB95F /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
+		9187CC072A3512A700ACB95F /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = /Users/vasumd/XCodeProjects/BmtcMate/include; sourceTree = "<absolute>"; };
+		9187CC0A2A3512F800ACB95F /* BmtcMate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BmtcMate-Bridging-Header.h"; sourceTree = "<group>"; };
+		9187CC0E2A35154D00ACB95F /* BmtcLib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BmtcLib.hpp; sourceTree = "<group>"; };
+		9187CC0F2A3515B400ACB95F /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +98,8 @@
 		91464E982A34C6A1006DF586 = {
 			isa = PBXGroup;
 			children = (
+				9187CC072A3512A700ACB95F /* include */,
+				9187CC062A3512A700ACB95F /* lib */,
 				91464EA32A34C6A1006DF586 /* BmtcMate */,
 				9187CBDF2A34DCE100ACB95F /* BmtcMateWidget */,
 				9187CBDA2A34DCE100ACB95F /* Frameworks */,
@@ -110,6 +119,7 @@
 		91464EA32A34C6A1006DF586 /* BmtcMate */ = {
 			isa = PBXGroup;
 			children = (
+				9187CC0E2A35154D00ACB95F /* BmtcLib.hpp */,
 				9187CBCE2A34D1CB00ACB95F /* Model */,
 				91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */,
 				91464EA62A34C6A1006DF586 /* ContentView.swift */,
@@ -118,6 +128,8 @@
 				91464EA82A34C6A2006DF586 /* Assets.xcassets */,
 				91464EAA2A34C6A2006DF586 /* Preview Content */,
 				9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */,
+				9187CC0A2A3512F800ACB95F /* BmtcMate-Bridging-Header.h */,
+				9187CC0F2A3515B400ACB95F /* module.modulemap */,
 			);
 			path = BmtcMate;
 			sourceTree = "<group>";
@@ -210,6 +222,7 @@
 				TargetAttributes = {
 					91464EA02A34C6A1006DF586 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 					9187CBD82A34DCE100ACB95F = {
 						CreatedOnToolsVersion = 15.0;
@@ -242,6 +255,8 @@
 			files = (
 				91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */,
 				91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */,
+				9187CC082A3512A700ACB95F /* lib in Resources */,
+				9187CC092A3512A700ACB95F /* include in Resources */,
 				9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,11 +430,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BmtcMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/include";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,9 +447,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.InnateMC.BmtcMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BmtcMate/BmtcMate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,11 +464,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BmtcMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/include";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,9 +481,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.InnateMC.BmtcMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BmtcMate/BmtcMate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
