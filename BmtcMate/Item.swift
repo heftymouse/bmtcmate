@@ -1,10 +1,3 @@
-//
-//  Item.swift
-//  BmtcMate
-//
-//  Created by Vasu Deshpande on 10/06/23.
-//
-
 import Foundation
 import SwiftData
 
