@@ -3,23 +3,37 @@ import SwiftUI
 struct ContentView: View {
     @State var scheduledBuses: [ScheduledBusRoute] = []
     @State var showManualSelectSheet: Bool = false
+    @State var isDetectingNearby: Bool = false
     
     var body: some View {
-        VStack {
+        NavigationStack {
             Text("BmtcMate")
                 .font(.largeTitle)
                 .animation(.linear)
             HStack(spacing: 16) {
                 Button(action: {
-                    
+                    self.isDetectingNearby = true
                 }) {
-                    Text("Detect bus stop")
+                    if isDetectingNearby {
+                        Label(
+                            title: { /*@START_MENU_TOKEN@*/Text("Detecting")/*@END_MENU_TOKEN@*/ },
+                            icon: {
+                                ProgressView()
+                                    .padding(.trailing, 2)
+                            }
+                        )
+
+                    } else {
+                        Text("Detect nearby")
+                    }
                 }
+                .disabled(isDetectingNearby)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
                 
                 Button(action: {
-                    
+                    isDetectingNearby = false
+                    showManualSelectSheet = true
                 }) {
                     Text("Set Manually")
                 }
@@ -33,11 +47,22 @@ struct ContentView: View {
             Text("Bus Stop: \("todo")")
                 .padding()
             
-            ScheduledBusesView(buses: self.scheduledBuses)
-                .frame(maxHeight: .infinity)
+            
+            List(scheduledBuses) { bus in
+                NavigationLink(bus.route, value: bus)
+            }
+            .navigationDestination(for: ScheduledBusRoute.self) { bus in
+                ScheduledBusInfoView(bus: bus)
+                    .navigationTitle(Text(bus.route))
+            }
+            
             Spacer()
         }
     }
+}
+
+struct LoadingAnimationValues: Animatable {
+    var angle: Angle = Angle.zero
 }
 
 #Preview {

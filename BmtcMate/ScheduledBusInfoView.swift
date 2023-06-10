@@ -2,9 +2,10 @@ import SwiftUI
 
 struct ScheduledBusInfoView: View {
     var bus: ScheduledBusRoute
+    var scheduledStops: [ScheduledBusStop] = []
     
     var body: some View {
-        Text(bus.route)
+        Text("todo")
     }
 }
 

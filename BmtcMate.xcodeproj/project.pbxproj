@@ -15,7 +15,38 @@
 		9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */; };
 		9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */; };
 		9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */; };
+		9187CBDC2A34DCE100ACB95F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */; };
+		9187CBDE2A34DCE100ACB95F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187CBDD2A34DCE100ACB95F /* SwiftUI.framework */; };
+		9187CBE12A34DCE100ACB95F /* BmtcMateWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBE02A34DCE100ACB95F /* BmtcMateWidgetBundle.swift */; };
+		9187CBE52A34DCE100ACB95F /* BmtcMateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBE42A34DCE100ACB95F /* BmtcMateWidget.swift */; };
+		9187CBE72A34DCE200ACB95F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9187CBE62A34DCE200ACB95F /* Assets.xcassets */; };
+		9187CBEB2A34DCE200ACB95F /* BmtcMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9187CBE92A34DCE200ACB95F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91464E992A34C6A1006DF586 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9187CBD82A34DCE100ACB95F;
+			remoteInfo = BmtcMateWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9187CBEF2A34DCE200ACB95F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9187CBEB2A34DCE200ACB95F /* BmtcMateWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		91464EA12A34C6A1006DF586 /* BmtcMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BmtcMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +58,14 @@
 		9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusRoute.swift; sourceTree = "<group>"; };
 		9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusesView.swift; sourceTree = "<group>"; };
 		9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusInfoView.swift; sourceTree = "<group>"; };
+		9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BmtcMateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9187CBDD2A34DCE100ACB95F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		9187CBE02A34DCE100ACB95F /* BmtcMateWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmtcMateWidgetBundle.swift; sourceTree = "<group>"; };
+		9187CBE42A34DCE100ACB95F /* BmtcMateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmtcMateWidget.swift; sourceTree = "<group>"; };
+		9187CBE62A34DCE200ACB95F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9187CBE82A34DCE200ACB95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusStop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +76,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9187CBD62A34DCE100ACB95F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9187CBDE2A34DCE100ACB95F /* SwiftUI.framework in Frameworks */,
+				9187CBDC2A34DCE100ACB95F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				91464EA32A34C6A1006DF586 /* BmtcMate */,
+				9187CBDF2A34DCE100ACB95F /* BmtcMateWidget */,
+				9187CBDA2A34DCE100ACB95F /* Frameworks */,
 				91464EA22A34C6A1006DF586 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				91464EA12A34C6A1006DF586 /* BmtcMate.app */,
+				9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +134,29 @@
 			isa = PBXGroup;
 			children = (
 				9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */,
+				9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9187CBDA2A34DCE100ACB95F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */,
+				9187CBDD2A34DCE100ACB95F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9187CBDF2A34DCE100ACB95F /* BmtcMateWidget */ = {
+			isa = PBXGroup;
+			children = (
+				9187CBE02A34DCE100ACB95F /* BmtcMateWidgetBundle.swift */,
+				9187CBE42A34DCE100ACB95F /* BmtcMateWidget.swift */,
+				9187CBE62A34DCE200ACB95F /* Assets.xcassets */,
+				9187CBE82A34DCE200ACB95F /* Info.plist */,
+			);
+			path = BmtcMateWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,15 +169,34 @@
 				91464E9D2A34C6A1006DF586 /* Sources */,
 				91464E9E2A34C6A1006DF586 /* Frameworks */,
 				91464E9F2A34C6A1006DF586 /* Resources */,
+				9187CBEF2A34DCE200ACB95F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9187CBEA2A34DCE200ACB95F /* PBXTargetDependency */,
 			);
 			name = BmtcMate;
 			productName = BmtcMate;
 			productReference = 91464EA12A34C6A1006DF586 /* BmtcMate.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9187CBD82A34DCE100ACB95F /* BmtcMateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9187CBEC2A34DCE200ACB95F /* Build configuration list for PBXNativeTarget "BmtcMateWidgetExtension" */;
+			buildPhases = (
+				9187CBD52A34DCE100ACB95F /* Sources */,
+				9187CBD62A34DCE100ACB95F /* Frameworks */,
+				9187CBD72A34DCE100ACB95F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BmtcMateWidgetExtension;
+			productName = BmtcMateWidgetExtension;
+			productReference = 9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -118,6 +209,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					91464EA02A34C6A1006DF586 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					9187CBD82A34DCE100ACB95F = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -136,6 +230,7 @@
 			projectRoot = "";
 			targets = (
 				91464EA02A34C6A1006DF586 /* BmtcMate */,
+				9187CBD82A34DCE100ACB95F /* BmtcMateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -151,6 +246,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9187CBD72A34DCE100ACB95F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9187CBE72A34DCE200ACB95F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -162,11 +265,29 @@
 				9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */,
 				9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */,
 				9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */,
+				9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9187CBD52A34DCE100ACB95F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9187CBE52A34DCE100ACB95F /* BmtcMateWidget.swift in Sources */,
+				9187CBE12A34DCE100ACB95F /* BmtcMateWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9187CBEA2A34DCE200ACB95F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9187CBD82A34DCE100ACB95F /* BmtcMateWidgetExtension */;
+			targetProxy = 9187CBE92A34DCE200ACB95F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		91464EAF2A34C6A2006DF586 /* Debug */ = {
@@ -291,6 +412,7 @@
 		91464EB22A34C6A2006DF586 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +441,7 @@
 		91464EB32A34C6A2006DF586 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +467,58 @@
 			};
 			name = Release;
 		};
+		9187CBED2A34DCE200ACB95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BmtcMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BmtcMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.InnateMC.BmtcMate.BmtcMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9187CBEE2A34DCE200ACB95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BmtcMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BmtcMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.InnateMC.BmtcMate.BmtcMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +536,15 @@
 			buildConfigurations = (
 				91464EB22A34C6A2006DF586 /* Debug */,
 				91464EB32A34C6A2006DF586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9187CBEC2A34DCE200ACB95F /* Build configuration list for PBXNativeTarget "BmtcMateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9187CBED2A34DCE200ACB95F /* Debug */,
+				9187CBEE2A34DCE200ACB95F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

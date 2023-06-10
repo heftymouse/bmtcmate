@@ -11,6 +11,7 @@ struct ScheduledBusesView: View {
             }
             .navigationDestination(for: ScheduledBusRoute.self) { bus in
                 ScheduledBusInfoView(bus: bus)
+//                    .navigationTitle(Text(bus.route))
             }
         }
     }
