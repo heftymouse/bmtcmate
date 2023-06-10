@@ -11,6 +11,10 @@
 		91464EA72A34C6A1006DF586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91464EA62A34C6A1006DF586 /* ContentView.swift */; };
 		91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EA82A34C6A2006DF586 /* Assets.xcassets */; };
 		91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */; };
+		9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */; };
+		9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */; };
+		9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */; };
+		9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		91464EA62A34C6A1006DF586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91464EA82A34C6A2006DF586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusRoute.swift; sourceTree = "<group>"; };
+		9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusesView.swift; sourceTree = "<group>"; };
+		9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,14 @@
 		91464EA32A34C6A1006DF586 /* BmtcMate */ = {
 			isa = PBXGroup;
 			children = (
+				9187CBCE2A34D1CB00ACB95F /* Model */,
 				91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */,
 				91464EA62A34C6A1006DF586 /* ContentView.swift */,
+				9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */,
+				9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */,
 				91464EA82A34C6A2006DF586 /* Assets.xcassets */,
 				91464EAA2A34C6A2006DF586 /* Preview Content */,
+				9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */,
 			);
 			path = BmtcMate;
 			sourceTree = "<group>";
@@ -65,6 +77,14 @@
 				91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9187CBCE2A34D1CB00ACB95F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +147,7 @@
 			files = (
 				91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */,
 				91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */,
+				9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91464EA72A34C6A1006DF586 /* ContentView.swift in Sources */,
+				9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */,
+				9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */,
+				9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

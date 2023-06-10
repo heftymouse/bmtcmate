@@ -1,0 +1,21 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "BmtcMate" : {
+
+    },
+    "Bus Stop: %@" : {
+
+    },
+    "Detect bus stop" : {
+
+    },
+    "Set Manually" : {
+
+    },
+    "todo" : {
+
+    }
+  },
+  "version" : "1.0"
+}
