@@ -1,9 +1,13 @@
 import SwiftUI
+import BmtcLib
+import CoreLocation
 
 struct ContentView: View {
     @State var scheduledBuses: [ScheduledBusRoute] = []
     @State var showManualSelectSheet: Bool = false
     @State var isDetectingNearby: Bool = false
+    @State var nearbyStation: NearbyStation? = nil
+    @StateObject var locationViewModel = LocationViewModel()
     
     var body: some View {
         NavigationStack {
@@ -42,6 +46,16 @@ struct ContentView: View {
                 .sheet(isPresented: $showManualSelectSheet) {
                     Text("todo")
                 }
+                
+//                Button(action: {
+//                    locationViewModel.requestPermission()
+//                }, label: {
+//                    Label("Allow tracking", systemImage: "location")
+//                })
+            }
+            .onAppear {
+                print("no u")
+                self.locationViewModel.requestPermission()
             }
             
             Text("Bus Stop: \("todo")")
@@ -56,6 +70,8 @@ struct ContentView: View {
                     .navigationTitle(Text(bus.route))
             }
             
+            Text("\(self.locationViewModel.authorizationStatus.rawValue)")
+            Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
             Spacer()
         }
     }

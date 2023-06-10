@@ -4,15 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BmtcLib.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>BmtcMate.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>BmtcMateWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>91464EA02A34C6A1006DF586</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9187CBD82A34DCE100ACB95F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -24,6 +24,8 @@
 		9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */; };
 		9187CC082A3512A700ACB95F /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC062A3512A700ACB95F /* lib */; };
 		9187CC092A3512A700ACB95F /* include in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC072A3512A700ACB95F /* include */; };
+		9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CC102A351D3500ACB95F /* AppDelegate.swift */; };
+		91EA8EAC2A352E4D003E3FAB /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8EAB2A352E4D003E3FAB /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,16 @@
 				9187CBEB2A34DCE200ACB95F /* BmtcMateWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91EA8EC22A353D78003E3FAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -71,8 +83,10 @@
 		9187CC062A3512A700ACB95F /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		9187CC072A3512A700ACB95F /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = /Users/vasumd/XCodeProjects/BmtcMate/include; sourceTree = "<absolute>"; };
 		9187CC0A2A3512F800ACB95F /* BmtcMate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BmtcMate-Bridging-Header.h"; sourceTree = "<group>"; };
-		9187CC0E2A35154D00ACB95F /* BmtcLib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BmtcLib.hpp; sourceTree = "<group>"; };
-		9187CC0F2A3515B400ACB95F /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		9187CC102A351D3500ACB95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9187CC122A351E0100ACB95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		91EA8EAB2A352E4D003E3FAB /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		91EA8EAD2A353494003E3FAB /* libBmtcLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBmtcLib.a; path = lib/libBmtcLib.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,17 +133,18 @@
 		91464EA32A34C6A1006DF586 /* BmtcMate */ = {
 			isa = PBXGroup;
 			children = (
-				9187CC0E2A35154D00ACB95F /* BmtcLib.hpp */,
+				9187CC122A351E0100ACB95F /* Info.plist */,
 				9187CBCE2A34D1CB00ACB95F /* Model */,
 				91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */,
 				91464EA62A34C6A1006DF586 /* ContentView.swift */,
 				9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */,
 				9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */,
+				91EA8EAB2A352E4D003E3FAB /* LocationViewModel.swift */,
 				91464EA82A34C6A2006DF586 /* Assets.xcassets */,
 				91464EAA2A34C6A2006DF586 /* Preview Content */,
 				9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */,
 				9187CC0A2A3512F800ACB95F /* BmtcMate-Bridging-Header.h */,
-				9187CC0F2A3515B400ACB95F /* module.modulemap */,
+				9187CC102A351D3500ACB95F /* AppDelegate.swift */,
 			);
 			path = BmtcMate;
 			sourceTree = "<group>";
@@ -154,6 +169,7 @@
 		9187CBDA2A34DCE100ACB95F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91EA8EAD2A353494003E3FAB /* libBmtcLib.a */,
 				9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */,
 				9187CBDD2A34DCE100ACB95F /* SwiftUI.framework */,
 			);
@@ -182,6 +198,7 @@
 				91464E9E2A34C6A1006DF586 /* Frameworks */,
 				91464E9F2A34C6A1006DF586 /* Resources */,
 				9187CBEF2A34DCE200ACB95F /* Embed Foundation Extensions */,
+				91EA8EC22A353D78003E3FAB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,8 +297,10 @@
 				9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */,
 				9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */,
 				9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */,
+				9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */,
 				9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
+				91EA8EAC2A352E4D003E3FAB /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +456,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/include";
+				INFOPLIST_FILE = BmtcMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -445,6 +465,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
@@ -471,6 +495,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/include";
+				INFOPLIST_FILE = BmtcMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -479,6 +504,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
