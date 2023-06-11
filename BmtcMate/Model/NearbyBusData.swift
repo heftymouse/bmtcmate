@@ -33,7 +33,7 @@ struct NearbyBus: Decodable {
     }
 }
 
-struct NearbyBusDataRequest: Decodable {
+struct NearbyBusDataRequest: Encodable {
     let lan: String
     let regNo: String
 }
