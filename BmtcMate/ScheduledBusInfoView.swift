@@ -1,5 +1,4 @@
 import SwiftUI
-import BmtcLib
 
 struct ScheduledBusInfoView: View {
     var bus: ScheduledBusRoute

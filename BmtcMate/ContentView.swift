@@ -1,12 +1,10 @@
 import SwiftUI
-import BmtcLib
 import CoreLocation
 
 struct ContentView: View {
     @State var scheduledBuses: [ScheduledBusRoute] = []
     @State var showManualSelectSheet: Bool = false
     @State var isDetectingNearby: Bool = false
-    @State var nearbyStation: NearbyStation? = nil
     @StateObject var locationViewModel = LocationViewModel()
     
     var body: some View {

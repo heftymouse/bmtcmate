@@ -27,7 +27,6 @@
 		9187CBEB2A34DCE200ACB95F /* BmtcMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */; };
 		9187CC082A3512A700ACB95F /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC062A3512A700ACB95F /* lib */; };
-		9187CC092A3512A700ACB95F /* include in Resources */ = {isa = PBXBuildFile; fileRef = 9187CC072A3512A700ACB95F /* include */; };
 		9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CC102A351D3500ACB95F /* AppDelegate.swift */; };
 		91EA8EAC2A352E4D003E3FAB /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8EAB2A352E4D003E3FAB /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		9187CBE82A34DCE200ACB95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusStop.swift; sourceTree = "<group>"; };
 		9187CC062A3512A700ACB95F /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
-		9187CC072A3512A700ACB95F /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = /Users/vasumd/XCodeProjects/BmtcMate/include; sourceTree = "<absolute>"; };
 		9187CC0A2A3512F800ACB95F /* BmtcMate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BmtcMate-Bridging-Header.h"; sourceTree = "<group>"; };
 		9187CC102A351D3500ACB95F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9187CC122A351E0100ACB95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +118,7 @@
 		91464E982A34C6A1006DF586 = {
 			isa = PBXGroup;
 			children = (
-				9187CC072A3512A700ACB95F /* include */,
+				915A18162A35482700A21E4A /* include */,
 				9187CC062A3512A700ACB95F /* lib */,
 				91464EA32A34C6A1006DF586 /* BmtcMate */,
 				9187CBDF2A34DCE100ACB95F /* BmtcMateWidget */,
@@ -163,6 +161,13 @@
 				91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		915A18162A35482700A21E4A /* include */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		9187CBCE2A34D1CB00ACB95F /* Model */ = {
@@ -285,7 +290,6 @@
 				91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */,
 				91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */,
 				9187CC082A3512A700ACB95F /* lib in Resources */,
-				9187CC092A3512A700ACB95F /* include in Resources */,
 				9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
