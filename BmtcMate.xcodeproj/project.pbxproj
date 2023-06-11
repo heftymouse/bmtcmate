@@ -10,6 +10,7 @@
 		245EEE782A3540DE00370FB6 /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE772A3540DE00370FB6 /* BusStopList.swift */; };
 		245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */; };
 		245EEE7C2A3543FE00370FB6 /* BusTripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7B2A3543FE00370FB6 /* BusTripData.swift */; };
+		245EEE7E2A35465700370FB6 /* NearbyBusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7D2A35465700370FB6 /* NearbyBusData.swift */; };
 		91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */; };
 		91464EA72A34C6A1006DF586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91464EA62A34C6A1006DF586 /* ContentView.swift */; };
 		91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EA82A34C6A2006DF586 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		245EEE772A3540DE00370FB6 /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
 		245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataRequest.swift; sourceTree = "<group>"; };
 		245EEE7B2A3543FE00370FB6 /* BusTripData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTripData.swift; sourceTree = "<group>"; };
+		245EEE7D2A35465700370FB6 /* NearbyBusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusData.swift; sourceTree = "<group>"; };
 		91464EA12A34C6A1006DF586 /* BmtcMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BmtcMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmtcMateApp.swift; sourceTree = "<group>"; };
 		91464EA62A34C6A1006DF586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				245EEE772A3540DE00370FB6 /* BusStopList.swift */,
 				245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */,
 				245EEE7B2A3543FE00370FB6 /* BusTripData.swift */,
+				245EEE7D2A35465700370FB6 /* NearbyBusData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				245EEE7C2A3543FE00370FB6 /* BusTripData.swift in Sources */,
 				9187CBD02A34D1DB00ACB95F /* ScheduledBusRoute.swift in Sources */,
 				9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */,
+				245EEE7E2A35465700370FB6 /* NearbyBusData.swift in Sources */,
 				245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */,
 				9187CBF12A34ECBD00ACB95F /* ScheduledBusStop.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
