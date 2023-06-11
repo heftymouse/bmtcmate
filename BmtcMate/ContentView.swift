@@ -56,7 +56,7 @@ struct ContentView: View {
                 Text("Bus Station: \(nearbyStation.name)")
                     .padding()
             } else {
-                Text(isDetectingNearby ? "No nearby bus station found" : "")
+                Text(isDetectingNearby ? "" : "No nearby bus station found")
             }
             
             
@@ -79,11 +79,9 @@ struct ContentView: View {
         self.locationViewModel.requestPermission()
         if locationViewModel.authorizationStatus == .authorizedAlways || locationViewModel.authorizationStatus == .authorizedWhenInUse {
             guard let loc = self.locationViewModel.lastSeenLocation else {
-                DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
-                    DispatchQueue.main.async {
-                        updateLoc()
-                    }
-                }
+                self.nearbyStations = []
+                self.nearbyStation = nil
+                self.isDetectingNearby = false
                 return
             }
             Task {
