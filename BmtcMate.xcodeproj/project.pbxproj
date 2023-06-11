@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		245EEE782A3540DE00370FB6 /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE772A3540DE00370FB6 /* BusStopList.swift */; };
+		245EEE782A3540DE00370FB6 /* NearbyBusStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE772A3540DE00370FB6 /* NearbyBusStations.swift */; };
 		245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */; };
 		245EEE7C2A3543FE00370FB6 /* BusTripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7B2A3543FE00370FB6 /* BusTripData.swift */; };
 		245EEE7E2A35465700370FB6 /* NearbyBusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7D2A35465700370FB6 /* NearbyBusData.swift */; };
@@ -66,7 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		245EEE772A3540DE00370FB6 /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
+		245EEE772A3540DE00370FB6 /* NearbyBusStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusStations.swift; sourceTree = "<group>"; };
 		245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDataRequest.swift; sourceTree = "<group>"; };
 		245EEE7B2A3543FE00370FB6 /* BusTripData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTripData.swift; sourceTree = "<group>"; };
 		245EEE7D2A35465700370FB6 /* NearbyBusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusData.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			children = (
 				9187CBCF2A34D1DB00ACB95F /* ScheduledBusRoute.swift */,
 				9187CBF02A34ECBD00ACB95F /* ScheduledBusStop.swift */,
-				245EEE772A3540DE00370FB6 /* BusStopList.swift */,
+				245EEE772A3540DE00370FB6 /* NearbyBusStations.swift */,
 				245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */,
 				245EEE7B2A3543FE00370FB6 /* BusTripData.swift */,
 				245EEE7D2A35465700370FB6 /* NearbyBusData.swift */,
@@ -309,7 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245EEE782A3540DE00370FB6 /* BusStopList.swift in Sources */,
+				245EEE782A3540DE00370FB6 /* NearbyBusStations.swift in Sources */,
 				91464EA72A34C6A1006DF586 /* ContentView.swift in Sources */,
 				9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */,
 				9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */,

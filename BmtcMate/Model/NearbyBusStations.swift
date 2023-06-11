@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct BusStopList: Decodable {
-    let list: [BusStop]
+struct NearbyBusStations: Decodable {
+    let list: [NearbyBusStation]
     let message: String
     let isSuccess: Bool
     let exception: String?
@@ -20,7 +20,7 @@ struct BusStopList: Decodable {
     }
 }
 
-struct BusStop: Decodable {
+struct NearbyBusStation: Decodable {
     let rowNumber: Int
     let id: Int
     let name: String
