@@ -23,6 +23,10 @@
 		91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */; };
 		915A18182A35488400A21E4A /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A18172A35488400A21E4A /* Http.swift */; };
 		91700CE62A3566AE008A4AA5 /* NearbyBusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700CE52A3566AE008A4AA5 /* NearbyBusView.swift */; };
+		91700CEE2A359195008A4AA5 /* LiveBusAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700CED2A359195008A4AA5 /* LiveBusAttributes.swift */; };
+		91700CEF2A359195008A4AA5 /* LiveBusAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700CED2A359195008A4AA5 /* LiveBusAttributes.swift */; };
+		91700CF12A3592FE008A4AA5 /* LiveBusActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700CF02A3592FE008A4AA5 /* LiveBusActivityWidget.swift */; };
+		91700CF22A3592FE008A4AA5 /* LiveBusActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91700CF02A3592FE008A4AA5 /* LiveBusActivityWidget.swift */; };
 		9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */; };
 		9187CBDC2A34DCE100ACB95F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */; };
 		9187CBDE2A34DCE100ACB95F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187CBDD2A34DCE100ACB95F /* SwiftUI.framework */; };
@@ -81,6 +85,8 @@
 		91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		915A18172A35488400A21E4A /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		91700CE52A3566AE008A4AA5 /* NearbyBusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusView.swift; sourceTree = "<group>"; };
+		91700CED2A359195008A4AA5 /* LiveBusAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBusAttributes.swift; sourceTree = "<group>"; };
+		91700CF02A3592FE008A4AA5 /* LiveBusActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBusActivityWidget.swift; sourceTree = "<group>"; };
 		9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9187CBD92A34DCE100ACB95F /* BmtcMateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BmtcMateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9187CBDB2A34DCE100ACB95F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -179,6 +185,15 @@
 			path = Intent;
 			sourceTree = "<group>";
 		};
+		91700CEC2A35915F008A4AA5 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				91700CED2A359195008A4AA5 /* LiveBusAttributes.swift */,
+				91700CF02A3592FE008A4AA5 /* LiveBusActivityWidget.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		9187CBCE2A34D1CB00ACB95F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +219,7 @@
 		9187CBDF2A34DCE100ACB95F /* BmtcMateWidget */ = {
 			isa = PBXGroup;
 			children = (
+				91700CEC2A35915F008A4AA5 /* Live */,
 				9187CBE02A34DCE100ACB95F /* BmtcMateWidgetBundle.swift */,
 				9187CBE42A34DCE100ACB95F /* BmtcMateWidget.swift */,
 				9187CBE62A34DCE200ACB95F /* Assets.xcassets */,
@@ -317,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91700CEE2A359195008A4AA5 /* LiveBusAttributes.swift in Sources */,
 				245EEE782A3540DE00370FB6 /* NearbyBusStations.swift in Sources */,
 				915A18182A35488400A21E4A /* Http.swift in Sources */,
 				91700CE62A3566AE008A4AA5 /* NearbyBusView.swift in Sources */,
@@ -325,6 +342,7 @@
 				9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */,
 				245EEE7E2A35465700370FB6 /* NearbyBusData.swift in Sources */,
 				245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */,
+				91700CF12A3592FE008A4AA5 /* LiveBusActivityWidget.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
 				91EA8EAC2A352E4D003E3FAB /* LocationViewModel.swift in Sources */,
 			);
@@ -334,6 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91700CEF2A359195008A4AA5 /* LiveBusAttributes.swift in Sources */,
+				91700CF22A3592FE008A4AA5 /* LiveBusActivityWidget.swift in Sources */,
 				9187CBE52A34DCE100ACB95F /* BmtcMateWidget.swift in Sources */,
 				244011B92A355DDC0065DB3B /* NearbyBusData.swift in Sources */,
 				9187CBE12A34DCE100ACB95F /* BmtcMateWidgetBundle.swift in Sources */,
