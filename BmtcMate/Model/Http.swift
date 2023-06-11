@@ -78,7 +78,7 @@ public struct Http {
 }
 
 func getNearbyStations(latitude: Double, longitude: Double) async throws -> [NearbyBusStation] {
-    let (data, urlResponse) = try await Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
+    let (data, _) = try await Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
         .header("N/A", field: "authtoken")
         .header("0", field: "clientid")
         .header("ios", field: "devicetype")

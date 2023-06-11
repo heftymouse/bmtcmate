@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import SwiftUI
+import WidgetKit
 
 public class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var authorizationStatus: CLAuthorizationStatus
@@ -23,10 +24,19 @@ public class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableO
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastSeenLocation = locations.first
+    }
+    
+    public func authorizedForWidgetUpdates() -> Bool {
+        return locationManager.isAuthorizedForWidgetUpdates
+    }
+    
+    public func getNewLocation(handler: @escaping (CLLocation) -> Void) {
+        
     }
     
     func requestPermission() {

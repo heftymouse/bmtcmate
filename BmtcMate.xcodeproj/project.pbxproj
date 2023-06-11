@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244011B62A355DD60065DB3B /* NearbyBusStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE772A3540DE00370FB6 /* NearbyBusStations.swift */; };
+		244011B72A355DD80065DB3B /* VehicleDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */; };
+		244011B82A355DDC0065DB3B /* BusTripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7B2A3543FE00370FB6 /* BusTripData.swift */; };
+		244011B92A355DDC0065DB3B /* NearbyBusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7D2A35465700370FB6 /* NearbyBusData.swift */; };
+		244011BA2A355DDC0065DB3B /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A18172A35488400A21E4A /* Http.swift */; };
+		244011BE2A356AAD0065DB3B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA8EAB2A352E4D003E3FAB /* LocationViewModel.swift */; };
 		245EEE782A3540DE00370FB6 /* NearbyBusStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE772A3540DE00370FB6 /* NearbyBusStations.swift */; };
 		245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE792A35416C00370FB6 /* VehicleDataRequest.swift */; };
 		245EEE7C2A3543FE00370FB6 /* BusTripData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245EEE7B2A3543FE00370FB6 /* BusTripData.swift */; };
@@ -329,7 +335,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9187CBE52A34DCE100ACB95F /* BmtcMateWidget.swift in Sources */,
+				244011B92A355DDC0065DB3B /* NearbyBusData.swift in Sources */,
 				9187CBE12A34DCE100ACB95F /* BmtcMateWidgetBundle.swift in Sources */,
+				244011B72A355DD80065DB3B /* VehicleDataRequest.swift in Sources */,
+				244011B82A355DDC0065DB3B /* BusTripData.swift in Sources */,
+				244011B62A355DD60065DB3B /* NearbyBusStations.swift in Sources */,
+				244011BA2A355DDC0065DB3B /* Http.swift in Sources */,
+				244011BE2A356AAD0065DB3B /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
