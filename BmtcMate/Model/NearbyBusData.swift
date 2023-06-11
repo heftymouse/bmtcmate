@@ -33,7 +33,12 @@ struct NearbyBus: Decodable {
     }
 }
 
-struct NearbyBusDataRequest: Decodable {
-    let lan: String
-    let regNo: String
+struct NearbyBusDataRequest: Encodable {
+    let stationId: Int
+    let tripType: Int
+
+    enum CodingKeys: String, CodingKey {
+        case stationId = "stationid", tripType = "triptype"
+    }
 }
+

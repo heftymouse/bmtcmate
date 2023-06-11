@@ -73,3 +73,7 @@ struct RouteDetail: Codable {
     }
 }
 
+struct BusTripDataRequest: Encodable {
+    let vehicleId: Int
+}
+
