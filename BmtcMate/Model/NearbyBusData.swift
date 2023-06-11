@@ -31,11 +31,18 @@ struct NearbyBus: Decodable, Hashable, Identifiable {
     var arriveTimeTimeComponent: String {
         return String(arrivalTime.split(separator: " ")[1])
     }
+    var shortArriveTime: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        let date = formatter.date(from: arrivalTime)
+        let otherFormatter = DateFormatter()
+        otherFormatter.dateFormat = "HH:mm"
+        return otherFormatter.string(from: date!)
+    }
     var estimatedArrival: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let date = formatter.date(from: arrivalTime)
-        print(date, arrivalTime)
         let relativeFormatter = RelativeDateTimeFormatter()
         return relativeFormatter.localizedString(for: date!, relativeTo: .now)
     }

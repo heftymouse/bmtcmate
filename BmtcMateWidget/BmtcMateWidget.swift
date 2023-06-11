@@ -28,7 +28,7 @@ struct Provider: TimelineProvider {
         }
         
         getNearbyBuses() { stop, buses in
-            let refreshDate = Calendar.current.date(byAdding: .minute, value: 1, to: .now)!
+            let refreshDate = Calendar.current.date(byAdding: .second, value: 30, to: .now)!
             let entry = SimpleEntry(date: .now, stop: stop, buses: buses)
             let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
             completion(timeline)
@@ -56,19 +56,48 @@ struct BmtcMateWidgetEntryView : View {
 
     var body: some View {
         VStack {
-            Text(entry.stop!.name)
+            HStack {
+                Spacer()
+                Image(systemName: "location.fill")
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                Spacer()
+                Text(entry.stop!.name)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Button(intent: WidgetIntent()) {
+                    Image(systemName: "arrow.counterclockwise.circle.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+
+            }
+            
             VStack {
-                ForEach(0..<4) { i in
+                Divider()
+                ForEach(0..<5) { i in
                     HStack {
                         Image(systemName: "bus")
                             .resizable()
-                            .frame(width: 32, height: 32)
-                            .padding()
-                        Text(entry.buses[i].routeNo)
+                            .frame(width: 28, height: 28)
+                            .foregroundStyle(entry.buses[i].routeNo.first == "V" ? .blue : .gray)
+                            .padding(4)
+                        VStack {
+                            Text(entry.buses[i].routeNo)
+                            Text(entry.buses[i].routeName)
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
                         Spacer()
-                        Text(entry.buses[i].estimatedArrival)
+                        VStack(alignment: .trailing) {
+                            Text(entry.buses[i].estimatedArrival)
+                            Text(entry.buses[i].shortArriveTime)
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
                     }
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    Divider()
                 }
             }
         }
