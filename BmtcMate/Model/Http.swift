@@ -104,3 +104,27 @@ func getNearbyBuses(stationId: Int) async throws -> [NearbyBus] {
         .request().0)
     .data
 }
+
+func getVehicleId(busno: String) async throws -> Int {
+    return try await JSONDecoder().decode(VehicleData.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/ListVehicles")
+        .header("N/A", field: "authtoken")
+        .header("0", field: "clientid")
+        .header("ios", field: "devicetype")
+        .header("en", field: "lan")
+        .header("randomvalue", field: "deviceid")
+        .json(VehicleDataRequest(lan: "en", vehicleRegNo: busno)).request().0)
+        .data[0].vehicleId
+}
+
+func getBusTripData(vehicleId: Int) async throws -> BusTripDetails {
+    let data = try await Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/VehicleTripDetails")
+        .header("N/A", field: "authtoken")
+        .header("0", field: "clientid")
+        .header("ios", field: "devicetype")
+        .header("en", field: "lan")
+        .header("randomvalue", field: "deviceid")
+        .json(BusTripDataRequest(vehicleId: vehicleId))
+        .request().0
+    print(String(data: data, encoding: .utf8)!)
+    return try await JSONDecoder().decode(BusTripDetails.self, from: data)
+}

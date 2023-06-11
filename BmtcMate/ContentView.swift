@@ -48,7 +48,7 @@ struct ContentView: View {
                         Text("None")
                             .tag(nil as NearbyBusStation?)
                         ForEach(nearbyStations) { option in
-                            Text("\(option.name) (Towards \(option.towards))")
+                            Text("\(option.name)\nTowards \(option.towards)")
                                 .tag(option as NearbyBusStation?)
                         }
                     }
@@ -78,6 +78,9 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onReceive(locationViewModel.$lastSeenLocation, perform: { _ in
+                    updateLoc()
+                })
             }
             
             if let nearbyStation = nearbyStation {
@@ -89,7 +92,7 @@ struct ContentView: View {
             
             
             List(self.nearbyBuses) { bus in
-                NavigationLink(bus.routeNo, value: bus)
+                NavigationLink("\(bus.arriveTimeTimeComponent) \(bus.routeNo) to \(bus.toStationName)", value: bus)
             }
             .navigationDestination(for: NearbyBus.self) { bus in
                 NearbyBusView(bus: bus)
@@ -131,15 +134,4 @@ struct ContentView: View {
             self.isDetectingNearby = false
         }
     }
-}
-
-struct LoadingAnimationValues: Animatable {
-    var angle: Angle = Angle.zero
-}
-
-#Preview {
-    //    ContentView(scheduledBuses: [
-    //        .init(route: "210-FA", time: Date.now),
-    //        .init(route: "410-FA", time: Date.now.addingTimeInterval(10))
-    //        ])
 }

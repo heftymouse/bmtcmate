@@ -135,6 +135,7 @@
 		91464EA32A34C6A1006DF586 /* BmtcMate */ = {
 			isa = PBXGroup;
 			children = (
+				91700CE72A35721B008A4AA5 /* Intent */,
 				9187CC122A351E0100ACB95F /* Info.plist */,
 				9187CBCE2A34D1CB00ACB95F /* Model */,
 				91464EA42A34C6A1006DF586 /* BmtcMateApp.swift */,
@@ -163,6 +164,13 @@
 			children = (
 			);
 			path = include;
+			sourceTree = "<group>";
+		};
+		91700CE72A35721B008A4AA5 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intent;
 			sourceTree = "<group>";
 		};
 		9187CBCE2A34D1CB00ACB95F /* Model */ = {

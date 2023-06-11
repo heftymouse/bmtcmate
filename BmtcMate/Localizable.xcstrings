@@ -4,15 +4,28 @@
     "" : {
 
     },
-    "%@ (Towards %@)" : {
+    "%@\nTowards %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ (Towards %2$@)"
+            "value" : "%1$@\nTowards %2$@"
           }
         }
       }
+    },
+    "%@ %@ to %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@ to %3$@"
+          }
+        }
+      }
+    },
+    "Arrival Time" : {
+
     },
     "BmtcMate" : {
 
@@ -27,6 +40,9 @@
         }
       }
     },
+    "Destination" : {
+
+    },
     "Detect nearby" : {
 
     },
@@ -34,6 +50,9 @@
 
     },
     "Done" : {
+
+    },
+    "From" : {
 
     },
     "No nearby bus station found" : {
@@ -45,7 +64,16 @@
     "Options" : {
 
     },
+    "Route" : {
+
+    },
     "Set Manually" : {
+
+    },
+    "Start live activity" : {
+
+    },
+    "To" : {
 
     }
   },

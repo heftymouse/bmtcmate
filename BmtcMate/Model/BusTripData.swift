@@ -41,7 +41,7 @@ struct LiveLocation: Codable {
 }
 
 // MARK: - RouteDetail
-struct RouteDetail: Codable {
+struct RouteDetail: Codable, Hashable {
     let rowid, tripid: Int
     let routeno, routename, busno, tripstatus: String
     let tripstatusid, sourcestation, destinationstation, servicetype: String
@@ -49,16 +49,24 @@ struct RouteDetail: Codable {
     let servicetypeid: Int
     let lastupdatedat, stationname: String
     let stationid: Int
-    let actualArrivaltime: String
+    let actualArrivaltime: String?
     let stopstatus: Int
     let etastatus, etastatusmapview: String
     let latitude, longitude: Double
     let currentstop, laststop, weblaststop, nextstop: String
     let currlatitude, currlongitude: Double
-    let schArrivaltime, schDeparturetime, eta, actualArrivaltime1: String
-    let actualDepartudetime, tripstarttime, tripendtime: String
+    let schArrivaltime, schDeparturetime, eta, actualArrivaltime1: String?
+    let actualDepartudetime, tripstarttime, tripendtime: String?
     let routeid, vehicleid, responsecode, lastreceiveddatetimeflag: Int
     let srno: Int
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(stationid)
+        hasher.combine(srno)
+        hasher.combine(routeno)
+        hasher.combine(busno)
+        hasher.combine(schArrivaltime)
+    }
 
     enum CodingKeys: String, CodingKey {
         case rowid, tripid, routeno, routename, busno, tripstatus, tripstatusid, sourcestation, destinationstation, servicetype, webservicetype, servicetypeid, lastupdatedat, stationname, stationid
