@@ -50,15 +50,16 @@ struct ContentView: View {
                     print("no u")
                     updateLoc()
                 }
-                
-                if let nearbyStation = nearbyStation {
-                    Text("Bus Station: \(nearbyStation.name)")
-                        .padding()
-                } else {
-                    Text("No nearby bus station found")
-                }
-                
-                
+            }
+            
+            if let nearbyStation = nearbyStation {
+                Text("Bus Station: \(nearbyStation.name)")
+                    .padding()
+            } else {
+                Text(isDetectingNearby ? "No nearby bus station found" : "")
+            }
+            
+            
 //                List(scheduledBuses) { bus in
 //                    NavigationLink(bus.route, value: bus)
 //                }
@@ -66,11 +67,10 @@ struct ContentView: View {
 //                    ScheduledBusInfoView(bus: bus)
 //                        .navigationTitle(Text(bus.route))
 //                }
-                
-                Text("\(self.locationViewModel.authorizationStatus.rawValue)")
-                Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
-                Spacer()
-            }
+            
+            Text("\(self.locationViewModel.authorizationStatus.rawValue)")
+            Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
+            Spacer()
         }
     }
     
@@ -79,15 +79,33 @@ struct ContentView: View {
         self.locationViewModel.requestPermission()
         if locationViewModel.authorizationStatus == .authorizedAlways || locationViewModel.authorizationStatus == .authorizedWhenInUse {
             guard let loc = self.locationViewModel.lastSeenLocation else {
+                DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+                    DispatchQueue.main.async {
+                        updateLoc()
+                    }
+                }
                 return
             }
             Task {
-                let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+                print(loc.coordinate)
+                let data: [NearbyBusStation]
+                do {
+                    data = try await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+                } catch {
+                    self.nearbyStations = []
+                    self.nearbyStation = nil
+                    self.isDetectingNearby = false
+                    return
+                }
                 DispatchQueue.main.async {
                     self.nearbyStations = data
                     self.nearbyStation = self.nearbyStations[0]
                 }
             }
+        } else {
+            self.nearbyStations = []
+            self.nearbyStation = nil
+            self.isDetectingNearby = false
         }
     }
 }

@@ -80,16 +80,14 @@ func getNearbyStations(latitude: Double, longitude: Double) async throws -> [Nea
     }
 }
 
-func getNearbyBuses() async throws -> [NearbyBusStation] {
-    return try await JSONDecoder().decode(NearbyBusStations.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
+func getNearbyBuses(stationId: Int) async throws -> [NearbyBus] {
+    return try await JSONDecoder().decode(NearbyBusData.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
         .header("authToken", field: "N/A")
         .header("clientId", field: "0")
         .header("devicetype", field: "ios")
         .header("lan", field: "en")
         .header("deviceid", field: "randomvalue")
-//        .json(NearbyBusStationsRequest(latitude: latitude, longitude: longitude, stationId: 0))
+        .json(NearbyBusDataRequest(stationId: stationId, tripType: 1))
         .request().0)
-    .list.filter { station in
-        station.distance <= 0.51
-    }
+    .data
 }
