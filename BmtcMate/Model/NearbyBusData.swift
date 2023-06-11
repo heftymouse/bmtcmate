@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct BusData: Decodable {
-    let data: [Bus]
+struct NearbyBusData: Decodable {
+    let data: [NearbyBus]
     let message: String
     let isSuccess: Bool
     let exception: String?
@@ -20,7 +20,7 @@ struct BusData: Decodable {
     }
 }
 
-struct Bus: Decodable {
+struct NearbyBus: Decodable {
     let routeNo: String
     let routeName: String
     let fromStationName: String
@@ -31,4 +31,9 @@ struct Bus: Decodable {
     enum CodingKeys: String, CodingKey {
         case routeNo = "routeno", routeName = "routename", fromStationName = "fromstationname", toStationName = "tostationname", busNo = "busno", arrivalTime = "arrivaltime"
     }
+}
+
+struct NearbyBusDataRequest: Decodable {
+    let lan: String
+    let regNo: String
 }

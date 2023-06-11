@@ -36,3 +36,9 @@ struct NearbyBusStation: Decodable {
         case rowNumber = "rowno", id = "geofenceid", name = "geofencename", centerLatitude = "center_lat", centerLongitude = "center_lon", towards, distance, totalMinutes = "totalminute", responseCode = "responsecode", radiusKm = "radiuskm"
     }
 }
+
+public struct NearbyBusStationsRequest: Encodable {
+    var latitude: Double
+    var longitude: Double
+    var stationId: Int
+}

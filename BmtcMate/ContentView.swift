@@ -2,11 +2,11 @@ import SwiftUI
 import CoreLocation
 
 struct ContentView: View {
-    @State var scheduledBuses: [ScheduledBusRoute] = []
     @State var showManualSelectSheet: Bool = false
     @State var isDetectingNearby: Bool = false
     @StateObject var locationViewModel = LocationViewModel()
     @State var nearbyStations: [NearbyBusStation] = []
+    @State var nearbyStation: NearbyBusStation? = nil
     
     var body: some View {
         NavigationStack {
@@ -16,6 +16,14 @@ struct ContentView: View {
             HStack(spacing: 16) {
                 Button(action: {
                     self.isDetectingNearby = true
+                    Task {
+                        let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+                        DispatchQueue.main.async {
+                            self.nearbyStations = data
+                            self.nearbyStation = self.nearbyStations[0]
+                            self.isDetectingNearby = false
+                        }
+                    }
                 }) {
                     if isDetectingNearby {
                         Label(
@@ -57,6 +65,7 @@ struct ContentView: View {
                         let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
                         DispatchQueue.main.async {
                             self.nearbyStations = data
+                            self.nearbyStation = self.nearbyStations[0]
                         }
                     }
                 }

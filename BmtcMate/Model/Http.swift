@@ -79,3 +79,5 @@ func getNearbyStations(latitude: Double, longitude: Double) async throws -> [Nea
         station.distance <= 0.51
     }
 }
+
+func getNearbyBus

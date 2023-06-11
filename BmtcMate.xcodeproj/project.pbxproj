@@ -16,7 +16,6 @@
 		91464EA92A34C6A2006DF586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EA82A34C6A2006DF586 /* Assets.xcassets */; };
 		91464EAC2A34C6A2006DF586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */; };
 		915A18182A35488400A21E4A /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A18172A35488400A21E4A /* Http.swift */; };
-		915A181A2A35493B00A21E4A /* NearbyBusStationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915A18192A35493B00A21E4A /* NearbyBusStationsRequest.swift */; };
 		9187CBCD2A34D18400ACB95F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */; };
 		9187CBD22A34D24600ACB95F /* ScheduledBusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */; };
 		9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */; };
@@ -76,7 +75,6 @@
 		91464EA82A34C6A2006DF586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91464EAB2A34C6A2006DF586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		915A18172A35488400A21E4A /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
-		915A18192A35493B00A21E4A /* NearbyBusStationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusStationsRequest.swift; sourceTree = "<group>"; };
 		9187CBCC2A34D18400ACB95F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9187CBD12A34D24600ACB95F /* ScheduledBusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusesView.swift; sourceTree = "<group>"; };
 		9187CBD32A34D39B00ACB95F /* ScheduledBusInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledBusInfoView.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				245EEE7B2A3543FE00370FB6 /* BusTripData.swift */,
 				245EEE7D2A35465700370FB6 /* NearbyBusData.swift */,
 				915A18172A35488400A21E4A /* Http.swift */,
-				915A18192A35493B00A21E4A /* NearbyBusStationsRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 				9187CBD42A34D39B00ACB95F /* ScheduledBusInfoView.swift in Sources */,
 				245EEE7C2A3543FE00370FB6 /* BusTripData.swift in Sources */,
 				9187CC112A351D3500ACB95F /* AppDelegate.swift in Sources */,
-				915A181A2A35493B00A21E4A /* NearbyBusStationsRequest.swift in Sources */,
 				245EEE7E2A35465700370FB6 /* NearbyBusData.swift in Sources */,
 				245EEE7A2A35416C00370FB6 /* VehicleDataRequest.swift in Sources */,
 				91464EA52A34C6A1006DF586 /* BmtcMateApp.swift in Sources */,
