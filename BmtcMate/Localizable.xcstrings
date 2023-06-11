@@ -62,12 +62,18 @@
 
     },
     "Open in BMTCMate" : {
+        
+    },
+    "On the way to %@" : {
 
     },
     "Options" : {
 
     },
     "Route" : {
+
+    },
+    "Route %@" : {
 
     },
     "Set Manually" : {

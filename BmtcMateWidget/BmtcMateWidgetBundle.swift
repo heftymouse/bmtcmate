@@ -12,5 +12,6 @@ import SwiftUI
 struct BmtcMateWidgetBundle: WidgetBundle {
     var body: some Widget {
         BmtcMateWidget()
+        LiveBusActivityWidget()
     }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreLocation
+import ActivityKit
 
 struct ContentView: View {
     @State var showManualSelectSheet: Bool = false
@@ -8,6 +9,7 @@ struct ContentView: View {
     @State var nearbyStations: [NearbyBusStation] = []
     @State var nearbyStation: NearbyBusStation? = nil
     @State var nearbyBuses: [NearbyBus] = []
+    @State var liveActivity: Activity<LiveBusAttributes>? = nil
     
     var body: some View {
         NavigationStack {
@@ -95,9 +97,15 @@ struct ContentView: View {
                 NavigationLink("\(bus.arriveTimeTimeComponent) \(bus.routeNo) to \(bus.toStationName)", value: bus)
             }
             .navigationDestination(for: NearbyBus.self) { bus in
-                NearbyBusView(bus: bus)
+                NearbyBusView(bus: bus, liveActivity: $liveActivity)
                     .navigationTitle(Text(bus.routeNo))
             }
+        }
+    }
+    
+    func stopActivity() {
+        Task {
+            await self.liveActivity!.end(nil, dismissalPolicy: .immediate)
         }
     }
     
