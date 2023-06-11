@@ -38,7 +38,10 @@ struct Provider: TimelineProvider {
     func getNearbyBuses(completion: @escaping (NearbyBusStation, [NearbyBus]) -> Void) {
         Task {
             let loc = locationViewModel.lastSeenLocation
-            let station = try! await getNearbyStations(latitude: loc!.coordinate.latitude, longitude: loc!.coordinate.longitude)[0]
+            guard let loc = loc else {
+                return
+            }
+            let station = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)[0]
             let buses = try! await BmtcMateWidgetExtension.getNearbyBuses(stationId: station.id);
             completion(station, buses)
         }

@@ -15,6 +15,7 @@ struct ContentView: View {
         NavigationStack {
             Text("BmtcMate")
                 .font(.largeTitle)
+                .fontWeight(.bold)
                 .animation(.linear)
             HStack(spacing: 16) {
                 Button(action: {
@@ -30,7 +31,7 @@ struct ContentView: View {
                         )
                         
                     } else {
-                        Text("Detect nearby")
+                        Text("Refresh")
                     }
                 }
                 .disabled(isDetectingNearby)
@@ -93,6 +94,15 @@ struct ContentView: View {
             }
             
             
+            if nearbyStation != nil && nearbyBuses.count == 0 {
+                HStack {
+                    Spacer()
+                    ProgressView()
+                        .padding(.top, 50)
+                    Spacer()
+                }
+            }
+            
             List(self.nearbyBuses) { bus in
                 NavigationLink("\(bus.arriveTimeTimeComponent) \(bus.routeNo) to \(bus.toStationName)", value: bus)
             }
@@ -100,6 +110,9 @@ struct ContentView: View {
                 NearbyBusView(bus: bus, liveActivity: $liveActivity)
                     .navigationTitle(Text(bus.routeNo))
             }
+        }
+        .refreshable {
+            updateLoc()
         }
     }
     

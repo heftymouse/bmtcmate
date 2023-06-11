@@ -43,9 +43,6 @@
     "Destination" : {
 
     },
-    "Detect nearby" : {
-
-    },
     "Detecting" : {
 
     },
@@ -68,6 +65,9 @@
 
     },
     "Options" : {
+
+    },
+    "Refresh" : {
 
     },
     "Route" : {
