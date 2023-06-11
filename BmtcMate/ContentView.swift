@@ -6,6 +6,7 @@ struct ContentView: View {
     @State var showManualSelectSheet: Bool = false
     @State var isDetectingNearby: Bool = false
     @StateObject var locationViewModel = LocationViewModel()
+    @State var nearbyStations: [NearbyBusStation] = []
     
     var body: some View {
         NavigationStack {
@@ -45,15 +46,20 @@ struct ContentView: View {
                     Text("todo")
                 }
                 
-//                Button(action: {
-//                    locationViewModel.requestPermission()
-//                }, label: {
-//                    Label("Allow tracking", systemImage: "location")
-//                })
-            }
             .onAppear {
                 print("no u")
                 self.locationViewModel.requestPermission()
+                if locationViewModel.authorizationStatus == .authorizedAlways || locationViewModel.authorizationStatus == .authorizedWhenInUse {
+                    guard let loc = self.locationViewModel.lastSeenLocation else {
+                        return
+                    }
+                    Task {
+                        let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+                        DispatchQueue.main.async {
+                            self.nearbyStations = data
+                        }
+                    }
+                }
             }
             
             Text("Bus Stop: \("todo")")
