@@ -35,12 +35,22 @@ public struct Http {
             return builder
         }
         
+        func dothefuni() -> RequestBuilder {
+            var builder = self
+                .header("N/A", field: "authtoken")
+                .header("0", field: "clientid")
+                .header("ios", field: "devicetype")
+                .header("en", field: "lan")
+                .header("randomvalue", field: "deviceid")
+            return builder
+        }
+        
         @discardableResult
         func json<T: Encodable>(_ body: T) throws -> RequestBuilder {
             var builder = self
             let jsonData = try JSONEncoder().encode(body)
             builder.urlRequest.httpBody = jsonData
-            builder.urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            builder.urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             return builder
         }
         
@@ -48,7 +58,7 @@ public struct Http {
         func string(_ body: String) -> RequestBuilder {
             var builder = self
             builder.urlRequest.httpBody = body.data(using: .utf8)
-            builder.urlRequest.setValue("text/plain", forHTTPHeaderField: "Content-Type")
+            builder.urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             return builder
         }
         
@@ -60,6 +70,7 @@ public struct Http {
         }
         
         func request() async throws -> (Data, URLResponse?) {
+            print(String(data: urlRequest.httpBody!, encoding: .utf8)!)
             let (data, urlResponse) = try await Http.session.data(for: urlRequest)
             return (data, urlResponse)
         }
@@ -67,14 +78,16 @@ public struct Http {
 }
 
 func getNearbyStations(latitude: Double, longitude: Double) async throws -> [NearbyBusStation] {
-    return try await JSONDecoder().decode(NearbyBusStations.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
-        .header("authToken", field: "N/A")
-        .header("clientId", field: "0")
-        .header("devicetype", field: "ios")
-        .header("lan", field: "en")
-        .header("deviceid", field: "randomvalue")
+    let (data, urlResponse) = try await Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
+        .header("N/A", field: "authtoken")
+        .header("0", field: "clientid")
+        .header("ios", field: "devicetype")
+        .header("en", field: "lan")
+        .header("randomvalue", field: "deviceid")
         .json(NearbyBusStationsRequest(latitude: latitude, longitude: longitude, stationId: 0))
-        .request().0)
+        .request()
+    print(String(data: data, encoding: .utf8)!)
+    return try JSONDecoder().decode(NearbyBusStations.self, from: data)
     .list.filter { station in
         station.distance <= 0.51
     }
@@ -82,11 +95,11 @@ func getNearbyStations(latitude: Double, longitude: Double) async throws -> [Nea
 
 func getNearbyBuses(stationId: Int) async throws -> [NearbyBus] {
     return try await JSONDecoder().decode(NearbyBusData.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
-        .header("authToken", field: "N/A")
-        .header("clientId", field: "0")
-        .header("devicetype", field: "ios")
-        .header("lan", field: "en")
-        .header("deviceid", field: "randomvalue")
+        .header("N/A", field: "authtoken")
+        .header("0", field: "clientid")
+        .header("ios", field: "devicetype")
+        .header("en", field: "lan")
+        .header("randomvalue", field: "deviceid")
         .json(NearbyBusDataRequest(stationId: stationId, tripType: 1))
         .request().0)
     .data
