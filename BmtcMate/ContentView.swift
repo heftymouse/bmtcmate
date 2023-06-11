@@ -15,15 +15,7 @@ struct ContentView: View {
                 .animation(.linear)
             HStack(spacing: 16) {
                 Button(action: {
-                    self.isDetectingNearby = true
-                    Task {
-                        let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
-                        DispatchQueue.main.async {
-                            self.nearbyStations = data
-                            self.nearbyStation = self.nearbyStations[0]
-                            self.isDetectingNearby = false
-                        }
-                    }
+                    updateLoc()
                 }) {
                     if isDetectingNearby {
                         Label(
@@ -33,7 +25,7 @@ struct ContentView: View {
                                     .padding(.trailing, 2)
                             }
                         )
-
+                        
                     } else {
                         Text("Detect nearby")
                     }
@@ -54,38 +46,48 @@ struct ContentView: View {
                     Text("todo")
                 }
                 
-            .onAppear {
-                print("no u")
-                self.locationViewModel.requestPermission()
-                if locationViewModel.authorizationStatus == .authorizedAlways || locationViewModel.authorizationStatus == .authorizedWhenInUse {
-                    guard let loc = self.locationViewModel.lastSeenLocation else {
-                        return
-                    }
-                    Task {
-                        let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
-                        DispatchQueue.main.async {
-                            self.nearbyStations = data
-                            self.nearbyStation = self.nearbyStations[0]
-                        }
-                    }
+                .onAppear {
+                    print("no u")
+                    updateLoc()
+                }
+                
+                if let nearbyStation = nearbyStation {
+                    Text("Bus Station: \(nearbyStation.name)")
+                        .padding()
+                } else {
+                    Text("No nearby bus station found")
+                }
+                
+                
+//                List(scheduledBuses) { bus in
+//                    NavigationLink(bus.route, value: bus)
+//                }
+//                .navigationDestination(for: ScheduledBusRoute.self) { bus in
+//                    ScheduledBusInfoView(bus: bus)
+//                        .navigationTitle(Text(bus.route))
+//                }
+                
+                Text("\(self.locationViewModel.authorizationStatus.rawValue)")
+                Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
+                Spacer()
+            }
+        }
+    }
+    
+    func updateLoc() {
+        self.isDetectingNearby = true
+        self.locationViewModel.requestPermission()
+        if locationViewModel.authorizationStatus == .authorizedAlways || locationViewModel.authorizationStatus == .authorizedWhenInUse {
+            guard let loc = self.locationViewModel.lastSeenLocation else {
+                return
+            }
+            Task {
+                let data = try! await getNearbyStations(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+                DispatchQueue.main.async {
+                    self.nearbyStations = data
+                    self.nearbyStation = self.nearbyStations[0]
                 }
             }
-            
-            Text("Bus Stop: \("todo")")
-                .padding()
-            
-            
-            List(scheduledBuses) { bus in
-                NavigationLink(bus.route, value: bus)
-            }
-            .navigationDestination(for: ScheduledBusRoute.self) { bus in
-                ScheduledBusInfoView(bus: bus)
-                    .navigationTitle(Text(bus.route))
-            }
-            
-            Text("\(self.locationViewModel.authorizationStatus.rawValue)")
-            Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
-            Spacer()
         }
     }
 }
@@ -95,8 +97,8 @@ struct LoadingAnimationValues: Animatable {
 }
 
 #Preview {
-    ContentView(scheduledBuses: [
-        .init(route: "210-FA", time: Date.now),
-        .init(route: "410-FA", time: Date.now.addingTimeInterval(10))
-        ])
+    //    ContentView(scheduledBuses: [
+    //        .init(route: "210-FA", time: Date.now),
+    //        .init(route: "410-FA", time: Date.now.addingTimeInterval(10))
+    //        ])
 }

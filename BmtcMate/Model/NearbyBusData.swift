@@ -41,4 +41,3 @@ struct NearbyBusDataRequest: Encodable {
         case stationId = "stationid", tripType = "triptype"
     }
 }
-

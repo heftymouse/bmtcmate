@@ -10,13 +10,16 @@
     "BmtcMate" : {
 
     },
-    "Bus Stop: %@" : {
+    "Bus Station: %@" : {
 
     },
     "Detect nearby" : {
 
     },
     "Detecting" : {
+
+    },
+    "No nearby bus station found" : {
 
     },
     "Set Manually" : {
