@@ -20,13 +20,22 @@ struct NearbyBusData: Decodable {
     }
 }
 
-struct NearbyBus: Decodable {
+struct NearbyBus: Decodable, Hashable, Identifiable {
+    var id: String { arrivalTime + routeNo + busNo }
     let routeNo: String
     let routeName: String
     let fromStationName: String
     let toStationName: String
     let busNo: String
     let arrivalTime: String
+    var arriveTimeTimeComponent: String {
+        return String(arrivalTime.split(separator: " ")[1])
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(routeNo)
+        hasher.combine(arrivalTime)
+    }
 
     enum CodingKeys: String, CodingKey {
         case routeNo = "routeno", routeName = "routename", fromStationName = "fromstationname", toStationName = "tostationname", busNo = "busno", arrivalTime = "arrivaltime"

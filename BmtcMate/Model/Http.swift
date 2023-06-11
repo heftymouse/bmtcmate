@@ -94,7 +94,7 @@ func getNearbyStations(latitude: Double, longitude: Double) async throws -> [Nea
 }
 
 func getNearbyBuses(stationId: Int) async throws -> [NearbyBus] {
-    return try await JSONDecoder().decode(NearbyBusData.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/NearbyStations_V2")
+    return try await JSONDecoder().decode(NearbyBusData.self, from: Http.post("https://bmtcmobileapistaging.amnex.com/WebAPI/GetMobileTripsData")
         .header("N/A", field: "authtoken")
         .header("0", field: "clientid")
         .header("ios", field: "devicetype")

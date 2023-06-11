@@ -20,7 +20,7 @@ struct NearbyBusStations: Decodable {
     }
 }
 
-struct NearbyBusStation: Decodable {
+struct NearbyBusStation: Decodable, Equatable, Hashable, Identifiable {
     let rowNumber: Int
     let id: Int
     let name: String
@@ -31,6 +31,15 @@ struct NearbyBusStation: Decodable {
     let totalMinutes: Double
     let responseCode: Int
     let radiusKm: Int
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.rowNumber)
+        hasher.combine(self.id)
+    }
+    
+    public static func == (lhs: NearbyBusStation, rhs: NearbyBusStation) -> Bool {
+        return lhs.rowNumber == rhs.rowNumber
+    }
 
     enum CodingKeys: String, CodingKey {
         case rowNumber = "rowno", id = "geofenceid", name = "geofencename", centerLatitude = "center_lat", centerLongitude = "center_lon", towards, distance, totalMinutes = "totalminute", responseCode = "responsecode", radiusKm = "radiuskm"

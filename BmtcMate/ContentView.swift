@@ -7,6 +7,7 @@ struct ContentView: View {
     @StateObject var locationViewModel = LocationViewModel()
     @State var nearbyStations: [NearbyBusStation] = []
     @State var nearbyStation: NearbyBusStation? = nil
+    @State var nearbyBuses: [NearbyBus] = []
     
     var body: some View {
         NavigationStack {
@@ -43,34 +44,57 @@ struct ContentView: View {
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
                 .sheet(isPresented: $showManualSelectSheet) {
-                    Text("todo")
+                    Picker("Options", selection: $nearbyStation) {
+                        Text("None")
+                            .tag(nil as NearbyBusStation?)
+                        ForEach(nearbyStations) { option in
+                            Text("\(option.name) (Towards \(option.towards))")
+                                .tag(option as NearbyBusStation?)
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .padding()
+                    Button("Done") {
+                        showManualSelectSheet = false
+                    }
+                    .frame(maxWidth: .infinity)
                 }
                 
                 .onAppear {
                     print("no u")
                     updateLoc()
                 }
+                .onChange(of: nearbyStation) { oldValue, newValue in
+                    Task(priority: .high) {
+                        if let newValue = newValue {
+                            let it = try! await getNearbyBuses(stationId: newValue.id)
+                            DispatchQueue.main.async {
+                                self.nearbyBuses = it
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                self.nearbyBuses = []
+                            }
+                        }
+                    }
+                }
             }
             
             if let nearbyStation = nearbyStation {
-                Text("Bus Station: \(nearbyStation.name)")
+                Text("Bus Station: \(nearbyStation.name) (Towards \(nearbyStation.towards))")
                     .padding()
             } else {
                 Text(isDetectingNearby ? "" : "No nearby bus station found")
             }
             
             
-//                List(scheduledBuses) { bus in
-//                    NavigationLink(bus.route, value: bus)
-//                }
-//                .navigationDestination(for: ScheduledBusRoute.self) { bus in
-//                    ScheduledBusInfoView(bus: bus)
-//                        .navigationTitle(Text(bus.route))
-//                }
-            
-            Text("\(self.locationViewModel.authorizationStatus.rawValue)")
-            Text("\(self.locationViewModel.lastSeenLocation.debugDescription )")
-            Spacer()
+            List(self.nearbyBuses) { bus in
+                NavigationLink(bus.routeNo, value: bus)
+            }
+            .navigationDestination(for: NearbyBus.self) { bus in
+                NearbyBusView(bus: bus)
+                    .navigationTitle(Text(bus.routeNo))
+            }
         }
     }
     
@@ -98,6 +122,7 @@ struct ContentView: View {
                 DispatchQueue.main.async {
                     self.nearbyStations = data
                     self.nearbyStation = self.nearbyStations[0]
+                    self.isDetectingNearby = false
                 }
             }
         } else {

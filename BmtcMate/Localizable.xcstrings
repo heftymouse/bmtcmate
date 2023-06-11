@@ -4,17 +4,28 @@
     "" : {
 
     },
-    "%@" : {
-
-    },
-    "%d" : {
-
+    "%@ (Towards %@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (Towards %2$@)"
+          }
+        }
+      }
     },
     "BmtcMate" : {
 
     },
-    "Bus Station: %@" : {
-
+    "Bus Station: %@ (Towards %@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bus Station: %1$@ (Towards %2$@)"
+          }
+        }
+      }
     },
     "Detect nearby" : {
 
@@ -22,13 +33,19 @@
     "Detecting" : {
 
     },
+    "Done" : {
+
+    },
     "No nearby bus station found" : {
 
     },
-    "Set Manually" : {
+    "None" : {
 
     },
-    "todo" : {
+    "Options" : {
+
+    },
+    "Set Manually" : {
 
     }
   },
